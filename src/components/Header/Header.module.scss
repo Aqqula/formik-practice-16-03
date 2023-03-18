@@ -1,0 +1,40 @@
+@use "/src/common/color" as *;
+@use "/src/common/breakpoints" as bp;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+  width: 100%;
+  .link {
+    border: 1px solid $color-text;
+    border-radius: 5px;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: bp.$sm) {
+    .header{
+      width: 100%;
+      margin: auto;
+    }
+  }
+
+  @media screen and (min-width: bp.$md) {
+    .header{
+      width: 90%;
+      margin: auto;
+    }
+  }
+
+  @media screen and (min-width: bp.$lg) {
+    .header{
+      width: 70%;
+      margin: auto;
+    }
+  }

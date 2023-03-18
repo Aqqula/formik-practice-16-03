@@ -1,0 +1,116 @@
+@use "/src/common/color" as *;
+@use "/src/common/breakpoints" as bp;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  font-size: 1.3em;
+  margin-bottom: 3rem;
+  & > * {
+    margin-top: 18px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+  }
+
+  .input {
+    padding: 1.4rem;
+    border-radius: 5px;
+    border: transparent;
+    font-size: 1.1rem;
+    color: grey;
+    outline: none;
+    margin-top: 18px;
+    width: 100%;
+  }
+  ::placeholder {
+    color: grey;
+    opacity: 0.7;
+  }
+
+  .btn {
+    padding: 1.2rem;
+    border-radius: 5px;
+    border: transparent;
+    font-size: 1.1rem;
+    color: $color-text;
+    background-color: #28d2d0;
+  }
+
+  .radio {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid $color-text;
+    align-items: start;
+    position: relative;
+    & > * {
+      margin: 0.5rem 1rem 1rem 0;
+      span {
+        font-size: 0.8rem;
+      }
+    }
+    .radio_input {
+      flex-basis: 2%;
+      margin: 1rem;
+      margin-left: 1.3rem;
+    }
+    .error {
+      position: absolute;
+      top: 15px;
+      right: -32px;
+      width: 60%;
+      z-index: 999;
+      line-height: 20px;
+      padding: 10px;
+      font-size: 14px;
+      text-align: center;
+      color: rgb(255, 255, 255);
+      background: rgb(228, 78, 78);
+      border: transparent;
+      border-radius: 5px;
+      text-shadow: rgba(0, 0, 0, 0.1) 1px 1px 1px;
+      box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px 0px;
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent #dd4848 transparent transparent;
+        top: 10px;
+        left: -16px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: bp.$md) {
+  .form {
+    max-width: 560px;
+  }
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-height: 300px;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+  label{
+    max-width: 48%;
+  }
+  .radio {
+    align-items: center;
+    max-width: 97%;
+    margin: auto;
+    margin-top: 1rem;
+  }
+}
